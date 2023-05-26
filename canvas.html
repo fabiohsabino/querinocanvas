@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Desenhando com Canvas</title>
+        <style>
+            canvas {
+                border: 2px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Desenhando em JavaScript com Canvas</h1>
+        <canvas width="800" height="600"></canvas>
+        <script>
+            const canvas = document.querySelector("canvas")
+            // Obtemos o contexto de desenho em duas dimensões
+            const ctx = canvas.getContext("2d")
+
+            // Trocamos a cor de preenchimento (fill)
+            // A cor deve ser definida entre aspas usando os padrões do CSS
+            // ctx.fillStyle = "red"
+            ctx.fillStyle = "rgb(57, 192, 192)"
+
+            // Desenhamos um retângulo dentro do canvas
+            // Parâmetros:
+            // 1o. Ponto no eixo x de início do retângulo
+            // 2o. Ponto no eixo y de início do retângulo
+            // 3o. Largura do retângulo em pixels
+            // 4o. Altura do retângulo em pixels
+            ctx.fillRect(50, 50, 500, 200)
+
+            // A função RGBA permite definir uma porcentagem para a
+            // opacidade e transparência no seu quarto valor, indo de
+            // 0.0 (totalmente transparente) a 1.0 (totalmente opaco)
+            ctx.fillStyle = "rgba(255, 0, 0, 0.5)"
+            ctx.fillRect(350, 20, 150, 450)
+
+            // Desenhando uma linha diagonal no canvas
+            // Começamos um novo caminho de pontos
+            ctx.beginPath()
+            // Definimos o primeiro ponto
+            // Parâmetros: coordenada no eixo x, coordenada no eixo y
+            ctx.moveTo(30, 570)
+            // Definimos a linha até o ponto final
+            // Parâmetros: coordenada no eixo x, coordenada no eixo y
+            ctx.lineTo(770, 30)
+            // Se quisermos, podemos aumentar a grossura da linha antes de
+            // desenhá-la com o comando stroke:
+            ctx.lineWidth = 10
+            // Também podemos trocar a cor do traço
+            ctx.strokeStyle = "green"
+            // Desenhamos o traço da linha
+            ctx.stroke()
+
+            // Desenhando um triângulo
+            // Começamos um novo caminho
+            ctx.beginPath()
+            // Ponto de início da linha da base do triângulo
+            ctx.moveTo(450, 550)
+            // Linha da base do triângulo
+            ctx.lineTo(750, 550)
+            // Linha do lado direito do triângulo
+            ctx.lineTo(750, 300)
+            // Linha da hipotenusa
+            ctx.lineTo(450, 550)
+            
+            ctx.lineWidth = 5
+            ctx.strokeStyle = "orange"
+            ctx.stroke()
+            ctx.fillStyle = "yellow"
+            ctx.fill()
+
+            // Desenhando um círculo
+            // Começar um novo caminho
+            ctx.beginPath()
+            // A função arc desenha um arco ou círculo completo
+            // Parâmetros:
+            // 1o. e 2o.: Coordenada x e y do CENTRO da circunferência
+            // 3o.: raio da circunferência em pixels
+            // 4o. e 5o.: ângulo inicial e final do arco em RADIANOS
+            // 6o.: Desenha no sentido antihorário (true ou false)
+            ctx.arc(400, 300, 150, 0, 2 * Math.PI, false)
+            ctx.strokeStyle = "blue"
+            ctx.stroke()
+            ctx.fillStyle = "rgba(0, 0, 200, 0.6)"
+            ctx.fill()
+
+        </script>
+    </body>
+</html>
