@@ -18,6 +18,7 @@
     <script>
         const canvas = document.querySelector("canvas")  
         const ctx = canvas.getContext("2d")
+        
         //Rosto
         ctx.beginPath()
         ctx.arc(400, 300, 210, 0, 2 * Math.PI, false)
@@ -25,6 +26,7 @@
         ctx.stroke()
         ctx.fillStyle = "rgba(209, 173, 128)"
         ctx.fill()
+        
         //Boca
         ctx.beginPath()
         ctx.moveTo(300, 400)
@@ -35,15 +37,63 @@
         ctx.stroke()
         ctx.fillStyle = "red"
         ctx.fill()
+
         //Nariz
         ctx.beginPath()
-        ctx.moveTo(400, 300)
-        ctx.lineTo(370, 360)
-        //ctx.lineTo(400, 450)
+        ctx.moveTo(400, 320)
+        ctx.lineTo(380, 350)
+        ctx.lineTo(400, 350)
+        ctx.lineTo(420, 350)
+        ctx.lineWidth = 2.5
+        ctx.strokeStyle = "rgb(92,51,23)"
+        ctx.stroke()
+        ctx.fillStyle = "rgb(92,51,23)"
+        ctx.fill()
+
+        //Olho Esquerdo
+        ctx.beginPath()
+        ctx.arc(300, 290, 40, 0, 2 * Math.PI, false)
+        ctx.lineWidth = 10
         ctx.strokeStyle = "black"
         ctx.stroke()
-        //ctx.fillStyle = "red"
-        //ctx.fill()
+        ctx.fillStyle = "green"
+        ctx.fill()
+
+        //Pupila Esquerda
+        ctx.beginPath()
+        ctx.arc(300, 290, 5, 0, 2 * Math.PI, false)
+        ctx.lineWidth = 10
+        ctx.strokeStyle = "black"
+        ctx.stroke()
+        ctx.fillStyle = "black"
+        ctx.fill()
+
+        //Olho Direito
+        ctx.beginPath()
+        ctx.arc(500, 290, 40, 0, 2 * Math.PI, false)
+        ctx.lineWidth = 10
+        ctx.strokeStyle = "black"
+        ctx.stroke()
+        ctx.fillStyle = "green"
+        ctx.fill()
+
+        //Pupila Direita
+        ctx.beginPath()
+        ctx.arc(500, 290, 5, 0, 2 * Math.PI, false)
+        ctx.lineWidth = 10
+        ctx.strokeStyle = "black"
+        ctx.stroke()
+        ctx.fillStyle = "black"
+        ctx.fill()
+
+        //Chapéu
+        ctx.beginPath()
+        ctx.fillRect(100, 100, 600, 100)
+        ctx.fillRect(220, 50, 350, 100)
+        ctx.strokeStyle = "rgb(181, 165, 66)"
+        ctx.stroke()
+        ctx.fillStyle = "rgb(181, 165, 66)"
+        ctx.fill()
 
     </script>
 </body>
